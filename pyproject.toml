@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "svara"
+version = "0.1.0"
+description = "Singable song translation, starting with Telugu to English."
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.10"
+authors = [{ name = "Summer Rise Studios", email = "jampanikomal@summerrise.studio" }]
+dependencies = []
+
+[project.optional-dependencies]
+cmu = ["pronouncing>=0.2"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+svara = "svara.cli:main"
+
+[project.urls]
+Homepage = "https://www.summerrise.studio"
+Repository = "https://github.com/summerrise-studios/svara"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

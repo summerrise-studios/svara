@@ -1,0 +1,72 @@
+{
+  "title": "Brahmam Okkate",
+  "translator": "Claude (Opus 5.5) in Claude Code, using the Svara skill. Draft for a human lyricist to review.",
+  "tolerance": 1,
+  "lines": [
+    {
+      "n": 1,
+      "meaning": "Tandanana, ahi, tandanana, pure (sung vocables with no dictionary meaning)",
+      "singable": "tan-da-na-na a-hi tan-da-na-na pu-re",
+      "notes": "Vocables are kept as sung. Translating them would lose the folk rhythm the whole song rests on."
+    },
+    {
+      "n": 2,
+      "meaning": "Tandanana, well done!, tandanana",
+      "singable": "tan-da-na-na bha-la tan-da-na-na",
+      "notes": "\"Bhala\" is a cheer (\"well done\"), so it stays as a sound, the way \"hey\" would in English."
+    },
+    {
+      "n": 3,
+      "meaning": "Brahman (the ultimate reality) is one; the supreme Brahman is one.",
+      "singable": "The Truth is only one, the Highest Truth is one"
+    },
+    {
+      "n": 4,
+      "meaning": "The supreme Brahman is one, the supreme Brahman is one.",
+      "singable": "Oh, the Highest Truth is one, yes, the Highest Truth is one",
+      "notes": "\"Is one\" ends every okkate / okate line, so the English keeps one end rhyme the whole way through, as the Telugu does."
+    },
+    {
+      "n": 5,
+      "meaning": "Here there is no such thing as lower and higher.",
+      "singable": "Here there is no high, there is no low, no rank at all"
+    },
+    {
+      "n": 6,
+      "meaning": "For everyone, Sri Hari is the soul within.",
+      "singable": "In all of us, Hari is the inner soul"
+    },
+    {
+      "n": 7,
+      "meaning": "In this, all the kinds of living creatures are one.",
+      "singable": "Every living creature here, all of them are one"
+    },
+    {
+      "n": 8,
+      "meaning": "For everyone, Sri Hari is the soul within.",
+      "singable": "In all of us, Hari is the inner soul"
+    },
+    {
+      "n": 9,
+      "meaning": "The sleep a king sleeps in full comfort,",
+      "singable": "The sleep a king sleeps on his soft and silken bed"
+    },
+    {
+      "n": 10,
+      "meaning": "and the sleep of the servant beside him: that too is one and the same.",
+      "singable": "And the servant's sleep beside him, that sleep too is one"
+    },
+    {
+      "n": 11,
+      "meaning": "The earth a lofty Brahmin steps on is one,",
+      "singable": "The very ground the high-born Brahmin walks on is one"
+    },
+    {
+      "n": 12,
+      "meaning": "and the earth where the outcast lives is the same one.",
+      "singable": "And the ground where the outcast lives is that same one",
+      "notes": "The original names the caste (chandala). \"Outcast\" keeps the point of the verse, that the highest and the lowest stand on the same earth, without the slur."
+    }
+  ],
+  "notes": "Hari (Vishnu) is kept by name rather than translated to \"God\": the kirtana is addressed to him, and the name is two syllables that land on two notes."
+}

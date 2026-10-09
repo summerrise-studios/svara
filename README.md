@@ -2,7 +2,8 @@
 
 <p>
   <a href="LICENSE"><img alt="License: AGPL-3.0" src="https://img.shields.io/badge/license-AGPL--3.0-ff7445?style=flat-square"></a>
-  <img alt="Status: research / prototype" src="https://img.shields.io/badge/status-research%20%2F%20prototype-5e5a53?style=flat-square">
+  <img alt="Status: early prototype" src="https://img.shields.io/badge/status-early%20prototype-5e5a53?style=flat-square">
+  <a href="https://github.com/summerrise-studios/svara/actions/workflows/tests.yml"><img alt="Tests" src="https://img.shields.io/github/actions/workflow/status/summerrise-studios/svara/tests.yml?branch=main&label=tests&style=flat-square"></a>
   <a href="https://www.summerrise.studio"><img alt="Website: summerrise.studio" src="https://img.shields.io/badge/web-summerrise.studio-11100f?style=flat-square"></a>
 </p>
 
@@ -20,9 +21,61 @@ A translated song has to get three things right at once:
 - **Rhyme:** the rhyme scheme should survive the change of language.
 - **Emotion:** the feeling of the original has to carry over, not just its dictionary meaning.
 
+## The prototype
+
+The first prototype translates Telugu songs into English you can sing to the
+same tune. It splits the work in two:
+
+- **Claude writes the lines.** In [Claude Code](https://claude.com/claude-code),
+  the [`svara` skill](.claude/skills/svara/SKILL.md) has Claude draft a literal
+  meaning and a singable English line for every Telugu line.
+- **The `svara` tool measures them.** It counts Telugu aksharas (syllables),
+  marks laghu/guru weights, prāsa and end rhyme, then counts English syllables
+  and flags every line that is too long or short, breaks a refrain, or loses a
+  rhyme. Claude revises those lines and checks again.
+
+The result is a table a lyricist can review: original, meaning, singable line,
+syllables against target, rhyme, and notes on what was traded away. See the
+worked example, Annamacharya's *Brahmam Okkate*:
+[song](examples/brahmam-okkate/song.te.txt) ·
+[translation](examples/brahmam-okkate/translation.json) ·
+[report](examples/brahmam-okkate/report.md).
+
+### Try it
+
+Needs Python 3.10 or newer. There are no other dependencies.
+
+```bash
+git clone https://github.com/summerrise-studios/svara.git
+cd svara
+pip install -e .
+svara analyse examples/brahmam-okkate/song.te.txt
+svara check examples/brahmam-okkate/song.te.txt examples/brahmam-okkate/translation.json
+svara report examples/brahmam-okkate/song.te.txt examples/brahmam-okkate/translation.json
+```
+
+To translate your own song, open the repository in Claude Code and ask:
+*"Use the svara skill to translate songs/my-song.te.txt"*.
+
+For more accurate English syllables and rhymes, install the CMU Pronouncing
+Dictionary extra: `pip install -e ".[cmu]"`.
+
+### Limits
+
+- English syllables are counted by a spelling heuristic unless the CMU extra is
+  installed, so a count can be off by one. Hyphenate a word to force its split.
+- Telugu weights follow classical rules, simplified: conjuncts only count
+  inside a word, and the రేఫ exceptions aren't modelled.
+- It matches syllable counts, not the melody itself. Stress-to-beat alignment
+  from a recording is the next research step.
+- Only use lyrics you own, have permission for, or that are in the public domain.
+
 ## Status
 
-**Research / prototype.** Nothing is released yet, and there's no code in this repository yet. It will land here as development begins. Watch this repository, or [join the list](https://www.summerrise.studio/#contact) to hear when there's a demo, a release, or a research note.
+**Early prototype.** The analysis and checking work and are tested; the
+translation step runs through Claude Code. Watch this repository, or
+[join the list](https://www.summerrise.studio/#contact) to hear about demos,
+releases and research notes.
 
 ## Contributing
 
